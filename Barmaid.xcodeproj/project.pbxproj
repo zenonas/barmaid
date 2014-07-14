@@ -10,7 +10,7 @@
 		AD3E3E871973D53600418124 /* main.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD3E3E861973D53600418124 /* main.swift */; };
 		AD3E3E891973D53600418124 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD3E3E881973D53600418124 /* AppDelegate.swift */; };
 		AD3E3E9A1973D53600418124 /* BarmaidTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD3E3E991973D53600418124 /* BarmaidTests.swift */; };
-		AD3E3EA51973DFF400418124 /* Barmaid.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD3E3EA31973DFF400418124 /* Barmaid.swift */; };
+		AD3E3EA51973DFF400418124 /* BarmaidView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD3E3EA31973DFF400418124 /* BarmaidView.swift */; };
 		AD3E3EA61973DFF400418124 /* Barmaid.xib in Resources */ = {isa = PBXBuildFile; fileRef = AD3E3EA41973DFF400418124 /* Barmaid.xib */; };
 		AD3E3EA81973E11500418124 /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AD3E3EA71973E11500418124 /* Cocoa.framework */; };
 		AD3E3EAB1973E14800418124 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AD3E3EAA1973E14800418124 /* Foundation.framework */; };
@@ -35,7 +35,7 @@
 		AD3E3E931973D53600418124 /* BarmaidTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = BarmaidTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		AD3E3E981973D53600418124 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		AD3E3E991973D53600418124 /* BarmaidTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BarmaidTests.swift; sourceTree = "<group>"; };
-		AD3E3EA31973DFF400418124 /* Barmaid.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Barmaid.swift; sourceTree = "<group>"; };
+		AD3E3EA31973DFF400418124 /* BarmaidView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BarmaidView.swift; sourceTree = "<group>"; };
 		AD3E3EA41973DFF400418124 /* Barmaid.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = Barmaid.xib; sourceTree = "<group>"; };
 		AD3E3EA71973E11500418124 /* Cocoa.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Cocoa.framework; path = System/Library/Frameworks/Cocoa.framework; sourceTree = SDKROOT; };
 		AD3E3EAA1973E14800418124 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
@@ -85,7 +85,7 @@
 			isa = PBXGroup;
 			children = (
 				AD3E3E881973D53600418124 /* AppDelegate.swift */,
-				AD3E3EA31973DFF400418124 /* Barmaid.swift */,
+				AD3E3EA31973DFF400418124 /* BarmaidView.swift */,
 				AD3E3EA41973DFF400418124 /* Barmaid.xib */,
 				AD3E3ED71973EF0000418124 /* assets.xcassets */,
 				AD3E3E841973D53600418124 /* Supporting Files */,
@@ -229,7 +229,7 @@
 			files = (
 				AD3E3E891973D53600418124 /* AppDelegate.swift in Sources */,
 				AD3E3E871973D53600418124 /* main.swift in Sources */,
-				AD3E3EA51973DFF400418124 /* Barmaid.swift in Sources */,
+				AD3E3EA51973DFF400418124 /* BarmaidView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
