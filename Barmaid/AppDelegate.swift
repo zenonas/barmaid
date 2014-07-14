@@ -7,6 +7,7 @@
 //
 
 import Cocoa
+import AppKit
 
 class AppDelegate: NSObject, NSApplicationDelegate {
                             
@@ -28,7 +29,7 @@ class AppDelegate: NSObject, NSApplicationDelegate {
         //Change -1 to CGFloat(NSVariableStatusItemLength) this is a Xcode 6 Beta 3 bug
         barmaidMenuItem = statusBar.statusItemWithLength(-1)
         barmaidMenuItem!.menu = barmaidMenu
-        barmaidMenuItem!.image = NSImage(contentsOfFile: "some/file")
+        barmaidMenuItem!.image = NSImage(named: "beer_mug")
         barmaidMenuItem!.title = "Barmaid"
     }
 
