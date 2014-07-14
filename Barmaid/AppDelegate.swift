@@ -24,6 +24,8 @@ class AppDelegate: NSObject, NSApplicationDelegate {
         self.barmaid = BarmaidView(logo: "beer_mug_16", statusItem: barmaidItem)
         
         barmaidItem.view = barmaid
+        let brew = BrewServices()
+        brew.getServices()
         super.init()
         
     }

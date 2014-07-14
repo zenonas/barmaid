@@ -1,0 +1,44 @@
+//
+//  BrewServices.swift
+//  Barmaid
+//
+//  Created by Zen Kyprianou on 14/07/2014.
+//  Copyright (c) 2014 Zen Kyprianou. All rights reserved.
+//
+
+import Cocoa
+
+class BrewServices {
+    
+    var task: NSTask
+    var pipe: NSPipe
+    var file: NSFileHandle
+    
+    init() {
+        self.task = NSTask()
+        self.task.launchPath = "/bin/bash"
+        self.pipe = NSPipe()
+        self.file = NSFileHandle()
+    }
+    
+    func getServices() {
+        var arguments = ["-c", "/usr/bin/find -L /usr/local/opt -type f -name 'homebrew*.plist'"]
+        self.task.arguments = arguments
+        
+
+        self.task.standardOutput = self.pipe
+        
+        self.file = self.pipe.fileHandleForReading
+        
+        self.task.launch()
+        self.task.waitUntilExit()
+        
+
+        var data = NSData()
+        data = self.file.readDataToEndOfFile()
+        
+        var stringResult = NSString(data: data, encoding: NSUTF8StringEncoding)
+        
+        println("results are: \(stringResult)")
+    }
+}
