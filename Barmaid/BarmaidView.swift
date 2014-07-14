@@ -51,6 +51,5 @@ class BarmaidView: NSView {
     }
     
     override func mouseUp(theEvent: NSEvent!) {
-        return
     }
 }

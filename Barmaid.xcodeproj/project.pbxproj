@@ -11,10 +11,11 @@
 		AD3E3E891973D53600418124 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD3E3E881973D53600418124 /* AppDelegate.swift */; };
 		AD3E3E9A1973D53600418124 /* BarmaidTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD3E3E991973D53600418124 /* BarmaidTests.swift */; };
 		AD3E3EA51973DFF400418124 /* BarmaidView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD3E3EA31973DFF400418124 /* BarmaidView.swift */; };
-		AD3E3EA61973DFF400418124 /* Barmaid.xib in Resources */ = {isa = PBXBuildFile; fileRef = AD3E3EA41973DFF400418124 /* Barmaid.xib */; };
-		AD3E3EA81973E11500418124 /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AD3E3EA71973E11500418124 /* Cocoa.framework */; };
-		AD3E3EAB1973E14800418124 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AD3E3EAA1973E14800418124 /* Foundation.framework */; };
 		AD3E3ED81973EF0000418124 /* assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = AD3E3ED71973EF0000418124 /* assets.xcassets */; };
+		AD3E3EDA1974159C00418124 /* beer_mug_512@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = AD3E3ED91974159C00418124 /* beer_mug_512@2x.png */; };
+		AD3E3EDC197415F500418124 /* beer_mug_32@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = AD3E3EDB197415F500418124 /* beer_mug_32@2x.png */; };
+		AD3E3EDE1974163100418124 /* MainMenu.xib in Resources */ = {isa = PBXBuildFile; fileRef = AD3E3EDD1974163100418124 /* MainMenu.xib */; };
+		AD3E3EE019741C0E00418124 /* beer_mug_16.png in Resources */ = {isa = PBXBuildFile; fileRef = AD3E3EDF19741C0E00418124 /* beer_mug_16.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -36,10 +37,13 @@
 		AD3E3E981973D53600418124 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		AD3E3E991973D53600418124 /* BarmaidTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BarmaidTests.swift; sourceTree = "<group>"; };
 		AD3E3EA31973DFF400418124 /* BarmaidView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BarmaidView.swift; sourceTree = "<group>"; };
-		AD3E3EA41973DFF400418124 /* Barmaid.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = Barmaid.xib; sourceTree = "<group>"; };
 		AD3E3EA71973E11500418124 /* Cocoa.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Cocoa.framework; path = System/Library/Frameworks/Cocoa.framework; sourceTree = SDKROOT; };
 		AD3E3EAA1973E14800418124 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		AD3E3ED71973EF0000418124 /* assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = assets.xcassets; sourceTree = "<group>"; };
+		AD3E3ED91974159C00418124 /* beer_mug_512@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "beer_mug_512@2x.png"; path = "assets/beer_mug_512@2x.png"; sourceTree = SOURCE_ROOT; };
+		AD3E3EDB197415F500418124 /* beer_mug_32@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "beer_mug_32@2x.png"; path = "assets/beer_mug_32@2x.png"; sourceTree = SOURCE_ROOT; };
+		AD3E3EDD1974163100418124 /* MainMenu.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MainMenu.xib; sourceTree = "<group>"; };
+		AD3E3EDF19741C0E00418124 /* beer_mug_16.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = beer_mug_16.png; path = assets/beer_mug_16.png; sourceTree = SOURCE_ROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -47,8 +51,6 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				AD3E3EAB1973E14800418124 /* Foundation.framework in Frameworks */,
-				AD3E3EA81973E11500418124 /* Cocoa.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -86,7 +88,7 @@
 			children = (
 				AD3E3E881973D53600418124 /* AppDelegate.swift */,
 				AD3E3EA31973DFF400418124 /* BarmaidView.swift */,
-				AD3E3EA41973DFF400418124 /* Barmaid.xib */,
+				AD3E3EDD1974163100418124 /* MainMenu.xib */,
 				AD3E3ED71973EF0000418124 /* assets.xcassets */,
 				AD3E3E841973D53600418124 /* Supporting Files */,
 			);
@@ -96,6 +98,9 @@
 		AD3E3E841973D53600418124 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				AD3E3ED91974159C00418124 /* beer_mug_512@2x.png */,
+				AD3E3EDB197415F500418124 /* beer_mug_32@2x.png */,
+				AD3E3EDF19741C0E00418124 /* beer_mug_16.png */,
 				AD3E3E851973D53600418124 /* Info.plist */,
 				AD3E3E861973D53600418124 /* main.swift */,
 			);
@@ -208,8 +213,11 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				AD3E3EA61973DFF400418124 /* Barmaid.xib in Resources */,
+				AD3E3EE019741C0E00418124 /* beer_mug_16.png in Resources */,
+				AD3E3EDE1974163100418124 /* MainMenu.xib in Resources */,
+				AD3E3EDC197415F500418124 /* beer_mug_32@2x.png in Resources */,
 				AD3E3ED81973EF0000418124 /* assets.xcassets in Resources */,
+				AD3E3EDA1974159C00418124 /* beer_mug_512@2x.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
