@@ -13,32 +13,38 @@ class BrewServices {
     var task: NSTask
     var pipe: NSPipe
     var file: NSFileHandle
+    var services: Dictionary<String, String>
     
     init() {
         self.task = NSTask()
         self.task.launchPath = "/bin/bash"
         self.pipe = NSPipe()
         self.file = NSFileHandle()
+        self.services = Dictionary<String, String>()
+        self.task.arguments = ["-c", "/usr/bin/find -L /usr/local/opt -type f -name 'homebrew*.plist'"]
+        
+        self.findServices()
+        
     }
     
-    func getServices() {
-        var arguments = ["-c", "/usr/bin/find -L /usr/local/opt -type f -name 'homebrew*.plist'"]
-        self.task.arguments = arguments
-        
-
+    func findServices() {
         self.task.standardOutput = self.pipe
-        
         self.file = self.pipe.fileHandleForReading
-        
         self.task.launch()
         self.task.waitUntilExit()
         
-
         var data = NSData()
         data = self.file.readDataToEndOfFile()
         
-        var stringResult = NSString(data: data, encoding: NSUTF8StringEncoding)
+        var stringResult = NSString(data: data, encoding: NSUTF8StringEncoding) as String
+        var allPaths = stringResult.componentsSeparatedByString("\n")
         
-        println("results are: \(stringResult)")
+        for service in allPaths {
+            if (service != "") {
+                var key = service.componentsSeparatedByString("/")[4].capitalizedString
+                services[key] = service
+            }
+        }
+
     }
 }
