@@ -17,7 +17,6 @@
 		AD3E3EDE1974163100418124 /* MainMenu.xib in Resources */ = {isa = PBXBuildFile; fileRef = AD3E3EDD1974163100418124 /* MainMenu.xib */; };
 		AD3E3EE019741C0E00418124 /* beer_mug_16.png in Resources */ = {isa = PBXBuildFile; fileRef = AD3E3EDF19741C0E00418124 /* beer_mug_16.png */; };
 		AD3E3EE219741E7200418124 /* BrewServices.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD3E3EE119741E7200418124 /* BrewServices.swift */; };
-		AD3E3EE419742F8300418124 /* BrewServicesTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD3E3EE319742F8300418124 /* BrewServicesTests.swift */; };
 		AD3E3EE81974315900418124 /* LaunchControl.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD3E3EE71974315900418124 /* LaunchControl.swift */; };
 /* End PBXBuildFile section */
 
@@ -48,7 +47,6 @@
 		AD3E3EDD1974163100418124 /* MainMenu.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MainMenu.xib; sourceTree = "<group>"; };
 		AD3E3EDF19741C0E00418124 /* beer_mug_16.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = beer_mug_16.png; path = assets/beer_mug_16.png; sourceTree = SOURCE_ROOT; };
 		AD3E3EE119741E7200418124 /* BrewServices.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BrewServices.swift; sourceTree = "<group>"; };
-		AD3E3EE319742F8300418124 /* BrewServicesTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BrewServicesTests.swift; sourceTree = "<group>"; };
 		AD3E3EE71974315900418124 /* LaunchControl.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LaunchControl.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -120,7 +118,6 @@
 			children = (
 				AD3E3E991973D53600418124 /* BarmaidTests.swift */,
 				AD3E3E971973D53600418124 /* Supporting Files */,
-				AD3E3EE319742F8300418124 /* BrewServicesTests.swift */,
 			);
 			path = BarmaidTests;
 			sourceTree = "<group>";
@@ -257,7 +254,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				AD3E3E9A1973D53600418124 /* BarmaidTests.swift in Sources */,
-				AD3E3EE419742F8300418124 /* BrewServicesTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
