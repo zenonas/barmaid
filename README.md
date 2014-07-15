@@ -15,4 +15,4 @@ Barmaid looks at all the homebrew plists installed in /usr/local/opt to discover
 
 ## LICENSE
 
-Barmaid is licensed under the MIT License. See the LISENSE file for more information
+Barmaid is licensed under the MIT License. See the LICENSE file for more information

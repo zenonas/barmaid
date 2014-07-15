@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		AD2C77AB19753414000D1753 /* BarmaidMenu.xib in Resources */ = {isa = PBXBuildFile; fileRef = AD2C77AA19753414000D1753 /* BarmaidMenu.xib */; };
 		AD3E3E871973D53600418124 /* main.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD3E3E861973D53600418124 /* main.swift */; };
 		AD3E3E891973D53600418124 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD3E3E881973D53600418124 /* AppDelegate.swift */; };
 		AD3E3E9A1973D53600418124 /* BarmaidTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD3E3E991973D53600418124 /* BarmaidTests.swift */; };
@@ -16,7 +17,7 @@
 		AD3E3EDC197415F500418124 /* beer_mug_32@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = AD3E3EDB197415F500418124 /* beer_mug_32@2x.png */; };
 		AD3E3EDE1974163100418124 /* MainMenu.xib in Resources */ = {isa = PBXBuildFile; fileRef = AD3E3EDD1974163100418124 /* MainMenu.xib */; };
 		AD3E3EE019741C0E00418124 /* beer_mug_16.png in Resources */ = {isa = PBXBuildFile; fileRef = AD3E3EDF19741C0E00418124 /* beer_mug_16.png */; };
-		AD3E3EE219741E7200418124 /* BrewServices.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD3E3EE119741E7200418124 /* BrewServices.swift */; };
+		AD3E3EE219741E7200418124 /* Homebrew.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD3E3EE119741E7200418124 /* Homebrew.swift */; };
 		AD3E3EE81974315900418124 /* LaunchControl.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD3E3EE71974315900418124 /* LaunchControl.swift */; };
 /* End PBXBuildFile section */
 
@@ -31,6 +32,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		AD2C77AA19753414000D1753 /* BarmaidMenu.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = BarmaidMenu.xib; sourceTree = "<group>"; };
 		AD3E3E811973D53600418124 /* Barmaid.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Barmaid.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		AD3E3E851973D53600418124 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		AD3E3E861973D53600418124 /* main.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = main.swift; sourceTree = "<group>"; };
@@ -46,7 +48,7 @@
 		AD3E3EDB197415F500418124 /* beer_mug_32@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "beer_mug_32@2x.png"; path = "assets/beer_mug_32@2x.png"; sourceTree = SOURCE_ROOT; };
 		AD3E3EDD1974163100418124 /* MainMenu.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MainMenu.xib; sourceTree = "<group>"; };
 		AD3E3EDF19741C0E00418124 /* beer_mug_16.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = beer_mug_16.png; path = assets/beer_mug_16.png; sourceTree = SOURCE_ROOT; };
-		AD3E3EE119741E7200418124 /* BrewServices.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BrewServices.swift; sourceTree = "<group>"; };
+		AD3E3EE119741E7200418124 /* Homebrew.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Homebrew.swift; sourceTree = "<group>"; };
 		AD3E3EE71974315900418124 /* LaunchControl.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LaunchControl.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -93,7 +95,8 @@
 				AD3E3E881973D53600418124 /* AppDelegate.swift */,
 				AD3E3EA31973DFF400418124 /* BarmaidView.swift */,
 				AD3E3EDD1974163100418124 /* MainMenu.xib */,
-				AD3E3EE119741E7200418124 /* BrewServices.swift */,
+				AD2C77AA19753414000D1753 /* BarmaidMenu.xib */,
+				AD3E3EE119741E7200418124 /* Homebrew.swift */,
 				AD3E3EE71974315900418124 /* LaunchControl.swift */,
 				AD3E3ED71973EF0000418124 /* assets.xcassets */,
 				AD3E3E841973D53600418124 /* Supporting Files */,
@@ -224,6 +227,7 @@
 				AD3E3EDC197415F500418124 /* beer_mug_32@2x.png in Resources */,
 				AD3E3ED81973EF0000418124 /* assets.xcassets in Resources */,
 				AD3E3EDA1974159C00418124 /* beer_mug_512@2x.png in Resources */,
+				AD2C77AB19753414000D1753 /* BarmaidMenu.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -243,7 +247,7 @@
 			files = (
 				AD3E3E891973D53600418124 /* AppDelegate.swift in Sources */,
 				AD3E3EE81974315900418124 /* LaunchControl.swift in Sources */,
-				AD3E3EE219741E7200418124 /* BrewServices.swift in Sources */,
+				AD3E3EE219741E7200418124 /* Homebrew.swift in Sources */,
 				AD3E3E871973D53600418124 /* main.swift in Sources */,
 				AD3E3EA51973DFF400418124 /* BarmaidView.swift in Sources */,
 			);

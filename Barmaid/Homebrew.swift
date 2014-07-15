@@ -8,7 +8,7 @@
 
 import Cocoa
 
-class BrewServices {
+class Homebrew {
     
     var task: NSTask
     var pipe: NSPipe
@@ -24,7 +24,6 @@ class BrewServices {
         self.task.arguments = ["-c", "/usr/bin/find -L /usr/local/opt -type f -name 'homebrew*.plist'"]
         
         self.findServices()
-        
     }
     
     func findServices() {

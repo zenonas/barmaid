@@ -24,11 +24,11 @@ class AppDelegate: NSObject, NSApplicationDelegate {
         self.barmaid = BarmaidView(logo: "beer_mug_16", statusItem: barmaidItem)
         
         barmaidItem.view = barmaid
-        let brew = BrewServices()
+        let brew = Homebrew()
         println(brew.services)
         super.init()
-        
     }
+    
     func applicationDidFinishLaunching(aNotification: NSNotification?) {
 
         // Insert code here to initialize your application

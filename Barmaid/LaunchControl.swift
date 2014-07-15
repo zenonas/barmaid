@@ -13,7 +13,7 @@ class LaunchControl {
     var services: Dictionary<String, String>
     var launchctl: NSTask
     
-    init() {
+    init(brew: Homebrew) {
         self.services = Dictionary<String, String>()
         self.launchctl = NSTask()
         self.launchctl.launchPath = "/bin/launchctl"
