@@ -9,22 +9,22 @@
 import Cocoa
 
 class LaunchControl {
-
-    var services: Dictionary<String, String>
-    var launchctl: NSTask
     
-    init(brew: Homebrew) {
-        self.services = Dictionary<String, String>()
-        self.launchctl = NSTask()
-        self.launchctl.launchPath = "/bin/launchctl"
+    let path: String
+    let launchPath: String
+    
+    init(path: String) {
+        self.path = path
+        self.launchPath = "/bin/launchctl"
     }
     
-    func load(services: Dictionary<String, String>) {
-        for (serviceName, serviceLocation) in services {
-            self.launchctl.arguments = ["load", serviceLocation]
-            self.launchctl.launch()
-            self.launchctl.waitUntilExit()
-        }
+    func load() {
+        var arguments = ["load", self.path]
+        NSTask.launchedTaskWithLaunchPath(self.launchPath, arguments: arguments)
     }
     
+    func unload() {
+        var arguments = ["unload", self.path]
+        NSTask.launchedTaskWithLaunchPath(self.launchPath, arguments: arguments)
+    }
 }

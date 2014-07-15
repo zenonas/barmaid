@@ -13,14 +13,14 @@ class Homebrew {
     var task: NSTask
     var pipe: NSPipe
     var file: NSFileHandle
-    var services: Dictionary<String, String>
+    var services: NSMutableArray
     
     init() {
         self.task = NSTask()
         self.task.launchPath = "/bin/bash"
         self.pipe = NSPipe()
         self.file = NSFileHandle()
-        self.services = Dictionary<String, String>()
+        self.services = NSMutableArray()
         self.task.arguments = ["-c", "/usr/bin/find -L /usr/local/opt -type f -name 'homebrew*.plist'"]
         
         self.findServices()
@@ -41,9 +41,9 @@ class Homebrew {
         for service in allPaths {
             if (service != "") {
                 var key = service.componentsSeparatedByString("/")[4].capitalizedString
-                services[key] = service
+                self.services.addObject(Service(name: key, path: service))
             }
         }
-
+        println(self.services)
     }
 }
