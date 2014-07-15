@@ -10,7 +10,6 @@ import Cocoa
 
 class AppDelegate: NSObject, NSApplicationDelegate {
     
-    @IBOutlet var window: NSWindow
     @IBOutlet var barmaidPopover: NSPopover
 
     let barmaid: BarmaidView
@@ -22,7 +21,6 @@ class AppDelegate: NSObject, NSApplicationDelegate {
         let barmaidItem = statusBar.statusItemWithLength(-1)
         
         self.barmaid = BarmaidView(logo: "beer_mug_16", statusItem: barmaidItem)
-        
         barmaidItem.view = barmaid
         super.init()
     }

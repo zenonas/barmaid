@@ -41,9 +41,9 @@ class Homebrew {
         for service in allPaths {
             if (service != "") {
                 var key = service.componentsSeparatedByString("/")[4].capitalizedString
-                self.services.addObject(Service(name: key, path: service))
+                var newService = Service(name: key, path: service)
+                self.services.addObject(newService)
             }
         }
-        println(self.services)
     }
 }
