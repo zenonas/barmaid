@@ -15,6 +15,9 @@
         <customObject id="YLy-65-1bz" customClass="NSFontManager"/>
         <viewController id="Nlh-AI-p9s" userLabel="Popover View Controller" customClass="BarmaidPopoverViewController" customModule="Barmaid" customModuleProvider="target">
             <connections>
+                <outlet property="restartButton" destination="3js-lv-3l1" id="gIE-WN-kcO"/>
+                <outlet property="startButton" destination="tfe-qQ-BSO" id="a1C-Z1-8uq"/>
+                <outlet property="tableView" destination="kWI-3i-Rqq" id="CEw-sl-Cq4"/>
                 <outlet property="view" destination="HKa-oJ-0Xl" id="X5r-Wv-OyI"/>
             </connections>
         </viewController>
@@ -62,19 +65,25 @@
                                                         <rect key="frame" x="3" y="14" width="33" height="32"/>
                                                         <imageCell key="cell" refusesFirstResponder="YES" alignment="left" imageScaling="proportionallyDown" image="NSActionTemplate" id="nTd-yj-nKC"/>
                                                     </imageView>
-                                                    <button verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="tfe-qQ-BSO">
+                                                    <button identifier="startButton" verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="tfe-qQ-BSO">
                                                         <rect key="frame" x="194" y="13" width="75" height="32"/>
-                                                        <buttonCell key="cell" type="push" title="Start" bezelStyle="rounded" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="dIV-EF-BcX">
+                                                        <buttonCell key="cell" type="push" title="Start" bezelStyle="rounded" alignment="center" state="on" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="dIV-EF-BcX">
                                                             <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
                                                             <font key="font" metaFont="system"/>
                                                         </buttonCell>
+                                                        <connections>
+                                                            <action selector="startButtonPress:" target="Nlh-AI-p9s" id="uBK-NK-RIc"/>
+                                                        </connections>
                                                     </button>
-                                                    <button verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="3js-lv-3l1">
+                                                    <button identifier="restartButton" verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="3js-lv-3l1">
                                                         <rect key="frame" x="262" y="13" width="84" height="32"/>
                                                         <buttonCell key="cell" type="push" title="Restart" bezelStyle="rounded" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="EQV-wV-R0p">
                                                             <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
                                                             <font key="font" metaFont="system"/>
                                                         </buttonCell>
+                                                        <connections>
+                                                            <action selector="restartButtonPress:" target="Nlh-AI-p9s" id="tsQ-D4-akc"/>
+                                                        </connections>
                                                     </button>
                                                     <textField verticalHuggingPriority="750" horizontalCompressionResistancePriority="250" fixedFrame="YES" allowsExpansionToolTips="YES" setsMaxLayoutWidthAtFirstLayout="YES" translatesAutoresizingMaskIntoConstraints="NO" id="nhh-ZT-BYd">
                                                         <rect key="frame" x="42" y="20" width="159" height="23"/>
