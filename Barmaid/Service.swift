@@ -13,26 +13,33 @@ class Service {
     let name: String
     let path: String
     let launchctl: LaunchControl
-    var status: String
     
     init(name: String, path: String) {
         self.name = name
         self.path = path
-        self.status = "stopped"
         self.launchctl = LaunchControl(path: self.path)
     }
     
     func start() {
-        if status == "stopped" {
+        if self.status() == "stopped" {
             self.launchctl.load()
-            self.status = "running"
         }
     }
     
     func stop() {
-        if status == "running" {
+        if self.status() == "running" {
             self.launchctl.unload()
-            self.status = "stopped"
+        }
+    }
+    
+    func status() -> String {
+        var pid = self.launchctl.getPid()
+        if (pid == "\n" || pid == "-\n") {
+            println(pid)
+            return "stopped"
+        } else {
+            println(pid)
+            return "running"
         }
     }
 }

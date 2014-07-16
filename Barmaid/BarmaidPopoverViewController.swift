@@ -32,6 +32,7 @@ class BarmaidPopoverViewController: NSViewController, NSTableViewDelegate, NSTab
         var row = self.tableView.rowForView(sender)
         var service: Service = self.homebrew.services.objectAtIndex(row) as Service
         service.start()
+        println(service.status())
     }
     
     @IBAction func restartButtonPress(sender: NSTableView) {
@@ -45,8 +46,6 @@ class BarmaidPopoverViewController: NSViewController, NSTableViewDelegate, NSTab
         var service: Service = self.homebrew.services[row] as Service
         var cellView: NSTableCellView = tableView.makeViewWithIdentifier("ServiceCell", owner: self) as NSTableCellView
         cellView.textField.stringValue = service.name
-        //var startButton: NSButton = tableView.makeViewWithIdentifier("startButton", owner: self) as NSButton
-        //startButton.stringValue = "Hello"
         return cellView
     }
 }
