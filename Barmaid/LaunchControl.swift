@@ -11,11 +11,23 @@ import Cocoa
 class LaunchControl {
     
     let path: String
+    let serviceId: String
     let launchPath: String
     
-    init(path: String) {
+    init(serviceId: String, path: String) {
+        self.serviceId = serviceId
         self.path = path
         self.launchPath = "/bin/launchctl"
+    }
+    
+    func start() {
+        var arguments = ["start", self.serviceId]
+        NSTask.launchedTaskWithLaunchPath(self.launchPath, arguments: arguments)
+    }
+    
+    func stop() {
+        var arguments = ["stop", self.serviceId]
+        NSTask.launchedTaskWithLaunchPath(self.launchPath, arguments: arguments)
     }
     
     func load() {
@@ -29,9 +41,7 @@ class LaunchControl {
     }
     
     func getPid() -> String {
-        var pathComponents = self.path.componentsSeparatedByString("/")
-        var serviceName = pathComponents[pathComponents.count - 1].stringByDeletingPathExtension
-        
+                
         var launchctlTask = NSTask()
         var grepTask = NSTask()
         var cutTask = NSTask()
@@ -40,7 +50,7 @@ class LaunchControl {
         launchctlTask.arguments = ["list"]
         
         grepTask.launchPath = "/usr/bin/grep"
-        grepTask.arguments = [serviceName]
+        grepTask.arguments = [self.serviceId]
         
         cutTask.launchPath = "/usr/bin/cut"
         cutTask.arguments = ["-f1"]
@@ -65,7 +75,6 @@ class LaunchControl {
         var data = NSData()
         data = fileHandle.readDataToEndOfFile()
         var stringResult = NSString(data: data, encoding: NSUTF8StringEncoding) as String
-
-        return stringResult
+        return stringResult.stringByReplacingOccurrencesOfString("\n", withString: "")
     }
 }
