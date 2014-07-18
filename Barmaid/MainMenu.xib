@@ -15,7 +15,6 @@
         <customObject id="YLy-65-1bz" customClass="NSFontManager"/>
         <viewController id="Nlh-AI-p9s" userLabel="Popover View Controller" customClass="BarmaidPopoverViewController" customModule="Barmaid" customModuleProvider="target">
             <connections>
-                <outlet property="startButton" destination="tfe-qQ-BSO" id="a1C-Z1-8uq"/>
                 <outlet property="tableView" destination="kWI-3i-Rqq" id="CEw-sl-Cq4"/>
                 <outlet property="view" destination="HKa-oJ-0Xl" id="X5r-Wv-OyI"/>
             </connections>
@@ -27,23 +26,22 @@
         </popover>
         <userDefaultsController representsSharedInstance="YES" id="XYL-WB-Ghh"/>
         <customView id="HKa-oJ-0Xl">
-            <rect key="frame" x="0.0" y="0.0" width="186" height="111"/>
+            <rect key="frame" x="0.0" y="0.0" width="172" height="111"/>
             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
             <subviews>
                 <scrollView fixedFrame="YES" borderType="none" autohidesScrollers="YES" horizontalLineScroll="27" horizontalPageScroll="10" verticalLineScroll="27" verticalPageScroll="10" hasHorizontalScroller="NO" usesPredominantAxisScrolling="NO" horizontalScrollElasticity="none" translatesAutoresizingMaskIntoConstraints="NO" id="06b-jj-Dka">
-                    <rect key="frame" x="2" y="20" width="184" height="91"/>
+                    <rect key="frame" x="2" y="20" width="170" height="91"/>
                     <clipView key="contentView" ambiguous="YES" misplaced="YES" drawsBackground="NO" copiesOnScroll="NO" id="vbk-2y-R97">
                         <rect key="frame" x="1" y="17" width="238" height="117"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <tableView verticalHuggingPriority="750" allowsExpansionToolTips="YES" columnAutoresizingStyle="lastColumnOnly" columnSelection="YES" columnResizing="NO" multipleSelection="NO" autosaveColumns="NO" rowHeight="25" rowSizeStyle="automatic" viewBased="YES" id="kWI-3i-Rqq">
-                                <rect key="frame" x="0.0" y="0.0" width="238" height="117"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <size key="intercellSpacing" width="3" height="2"/>
                                 <color key="backgroundColor" red="0.25567927750000002" green="0.2804732626" blue="0.85139266300000005" alpha="0.0" colorSpace="calibratedRGB"/>
                                 <color key="gridColor" name="gridColor" catalog="System" colorSpace="catalog"/>
                                 <tableColumns>
-                                    <tableColumn identifier="ServiceCell" width="181" minWidth="40" maxWidth="1000" id="OHd-D0-yul">
+                                    <tableColumn identifier="ServiceCell" width="167" minWidth="40" maxWidth="1000" id="OHd-D0-yul">
                                         <tableHeaderCell key="headerCell" lineBreakMode="truncatingTail" borderStyle="border" alignment="left">
                                             <font key="font" metaFont="smallSystem"/>
                                             <color key="textColor" name="headerTextColor" catalog="System" colorSpace="catalog"/>
@@ -57,31 +55,21 @@
                                         <tableColumnResizingMask key="resizingMask" resizeWithTable="YES" userResizable="YES"/>
                                         <prototypeCellViews>
                                             <tableCellView identifier="ServiceCell" id="U5J-hz-e7K">
-                                                <rect key="frame" x="1" y="1" width="181" height="25"/>
+                                                <rect key="frame" x="1" y="1" width="167" height="25"/>
                                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                                 <subviews>
                                                     <imageView horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="97E-E7-Nfp">
                                                         <rect key="frame" x="3" y="4" width="20" height="18"/>
                                                         <imageCell key="cell" refusesFirstResponder="YES" alignment="left" imageScaling="proportionallyDown" image="NSStatusAvailable" id="nTd-yj-nKC"/>
                                                     </imageView>
-                                                    <textField verticalHuggingPriority="750" horizontalCompressionResistancePriority="250" fixedFrame="YES" allowsExpansionToolTips="YES" setsMaxLayoutWidthAtFirstLayout="YES" translatesAutoresizingMaskIntoConstraints="NO" id="nhh-ZT-BYd">
-                                                        <rect key="frame" x="29" y="3" width="127" height="19"/>
+                                                    <textField verticalHuggingPriority="750" horizontalCompressionResistancePriority="250" fixedFrame="YES" allowsExpansionToolTips="YES" translatesAutoresizingMaskIntoConstraints="NO" id="nhh-ZT-BYd">
+                                                        <rect key="frame" x="29" y="3" width="114" height="19"/>
                                                         <textFieldCell key="cell" lineBreakMode="truncatingTail" sendsActionOnEndEditing="YES" alignment="left" title="Table View Cell" usesSingleLineMode="YES" id="ylr-zl-7tv">
                                                             <font key="font" metaFont="systemBold" size="12"/>
                                                             <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                                             <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
                                                         </textFieldCell>
                                                     </textField>
-                                                    <button identifier="startButton" fixedFrame="YES" tag="200" translatesAutoresizingMaskIntoConstraints="NO" id="tfe-qQ-BSO">
-                                                        <rect key="frame" x="157" y="1" width="21" height="21"/>
-                                                        <buttonCell key="cell" type="bevel" bezelStyle="rounded" image="NSGoRightTemplate" imagePosition="overlaps" alignment="center" state="on" identifier="start" imageScaling="proportionallyDown" inset="2" id="dIV-EF-BcX">
-                                                            <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
-                                                            <font key="font" metaFont="system"/>
-                                                        </buttonCell>
-                                                        <connections>
-                                                            <action selector="startStopButtonPress:" target="Nlh-AI-p9s" id="1sb-5o-JMs"/>
-                                                        </connections>
-                                                    </button>
                                                 </subviews>
                                                 <connections>
                                                     <outlet property="imageView" destination="97E-E7-Nfp" id="18e-s1-4ER"/>
@@ -100,7 +88,7 @@
                         <color key="backgroundColor" red="0.25567927750000002" green="0.2804732626" blue="0.85139266300000005" alpha="0.0" colorSpace="calibratedRGB"/>
                     </clipView>
                     <scroller key="horizontalScroller" hidden="YES" verticalHuggingPriority="750" horizontal="YES" id="Zl1-MV-bfI">
-                        <rect key="frame" x="1" y="118.950892329216" width="237.89162445068359" height="15"/>
+                        <rect key="frame" x="1" y="118.950892329216" width="238" height="15"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </scroller>
                     <scroller key="verticalScroller" hidden="YES" verticalHuggingPriority="750" horizontal="NO" id="r3h-1G-Und">
@@ -108,13 +96,6 @@
                         <autoresizingMask key="autoresizingMask"/>
                     </scroller>
                 </scrollView>
-                <button fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="cg6-RD-LRh">
-                    <rect key="frame" x="159" y="0.0" width="21" height="20"/>
-                    <buttonCell key="cell" type="bevel" bezelStyle="rounded" image="NSActionTemplate" imagePosition="overlaps" alignment="center" state="on" imageScaling="proportionallyDown" inset="2" id="pnG-zy-50a">
-                        <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
-                        <font key="font" metaFont="system"/>
-                    </buttonCell>
-                </button>
                 <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="x7R-TB-xiV">
                     <rect key="frame" x="13" y="4" width="120" height="11"/>
                     <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" title="Barmaid for Homebrew" id="pVP-V9-RsG">
@@ -126,8 +107,15 @@
                         <action selector="barmaidAboutButon:" target="Nlh-AI-p9s" id="afz-1s-IhG"/>
                     </connections>
                 </textField>
+                <button fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="cg6-RD-LRh">
+                    <rect key="frame" x="151" y="0.0" width="21" height="20"/>
+                    <buttonCell key="cell" type="bevel" bezelStyle="rounded" image="NSActionTemplate" imagePosition="overlaps" alignment="center" state="on" imageScaling="proportionallyDown" inset="2" id="pnG-zy-50a">
+                        <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
+                        <font key="font" metaFont="system"/>
+                    </buttonCell>
+                </button>
             </subviews>
-            <point key="canvasLocation" x="247" y="564.5"/>
+            <point key="canvasLocation" x="240" y="564.5"/>
         </customView>
         <menu id="N9l-Rh-G8f">
             <items>
@@ -146,7 +134,6 @@
     </objects>
     <resources>
         <image name="NSActionTemplate" width="14" height="14"/>
-        <image name="NSGoRightTemplate" width="9" height="9"/>
         <image name="NSStatusAvailable" width="16" height="16"/>
     </resources>
 </document>

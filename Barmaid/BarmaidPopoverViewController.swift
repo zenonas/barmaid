@@ -11,8 +11,10 @@ import Cocoa
 class BarmaidPopoverViewController: NSViewController, NSTableViewDelegate, NSTableViewDataSource {
 
     @IBOutlet var tableView: NSTableView
-    @IBOutlet var startButton: NSButton
-    @IBOutlet var restartButton: NSButton
+    
+    let startImage: NSImage = NSImage(named: NSImageNameRightFacingTriangleTemplate)
+    let stopImage: NSImage = NSImage(named: NSImageNameStopProgressTemplate)
+    
     var homebrew: Homebrew = Homebrew()
 
     override func awakeFromNib() {
@@ -20,7 +22,7 @@ class BarmaidPopoverViewController: NSViewController, NSTableViewDelegate, NSTab
     }
     
     override func viewDidAppear() {
-
+        self.tableView.reloadData()
     }
     
     override func viewDidLoad() {
@@ -39,38 +41,37 @@ class BarmaidPopoverViewController: NSViewController, NSTableViewDelegate, NSTab
     @IBAction func startStopButtonPress(sender: NSButton) {
         var row = self.tableView.rowForView(sender)
         var service: Service = self.homebrew.services.objectAtIndex(row) as Service
-        if sender.identifier == "start" {
-            if service.status() == "stopped" {
-                service.start()
-                sender.identifier = "stop"
-                sender.image = NSImage(named: NSImageNameStopProgressTemplate)
-            }
+        var status: String = service.status() as String
+        if sender.image == self.startImage && (status == "stopped" || status == "unloaded") {
+            println("hello")
+            service.start()
+            sender.image = self.startImage
         }
-        else if sender.identifier == "stop" {
-            if service.status() == "running" {
-                service.stop()
-                sender.identifier = "start"
-                sender.image = NSImage(named: NSImageNameRightFacingTriangleTemplate)
-            }
-            
+        else if sender.image == self.stopImage && status == "running" {
+            service.stop()
+            sender.image = self.stopImage
         }
         self.tableView.reloadData()
-    }
-    
-    @IBAction func restartButtonPress(sender: NSTableView) {
-        var row = self.tableView.rowForView(sender)
-        var service: Service = self.homebrew.services.objectAtIndex(row) as Service
-        service.restart()
     }
     
     func tableView(tableView: NSTableView!, viewForTableColumn tableColumn: NSTableColumn!, row: Int) -> NSView! {
         var service: Service = self.homebrew.services[row] as Service
         var cellView: NSTableCellView = tableView.makeViewWithIdentifier("ServiceCell", owner: self) as NSTableCellView
+        
+        var buttonRect: NSRect = NSRect(x: 143, y: 1, width: 21,height: 21)
+        var button:NSButton = NSButton(frame: buttonRect)
+        button.bordered = false
+        
+        cellView.addSubview(button)
+        
         cellView.textField.stringValue = service.name
+        
         if service.status() == "running" {
             cellView.imageView.image = NSImage(named:NSImageNameStatusAvailable)
+            button.image = self.stopImage
         } else {
             cellView.imageView.image = NSImage(named: NSImageNameStatusUnavailable)
+            button.image = self.startImage
         }
         return cellView
     }
