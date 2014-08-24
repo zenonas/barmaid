@@ -42,7 +42,7 @@ class BarmaidPopoverViewController: NSViewController, NSTableViewDelegate, NSTab
         NSApp.orderFrontStandardAboutPanel(sender)
     }
     
-    @IBAction func startStopButtonPress(sender: NSButton) {
+    func startStopButtonPress(sender: NSButton) {
         var row = self.tableView.rowForView(sender)
         var service: Service = self.homebrew.services.objectAtIndex(row) as Service
         var status: String = service.status() as String
@@ -65,7 +65,8 @@ class BarmaidPopoverViewController: NSViewController, NSTableViewDelegate, NSTab
         var buttonRect: NSRect = NSRect(x: 143, y: 1, width: 21,height: 21)
         var button:NSButton = NSButton(frame: buttonRect)
         button.bordered = false
-        
+        button.target = self
+        button.action = "startStopButtonPress:"
         cellView.addSubview(button)
         
         cellView.textField.stringValue = service.name
