@@ -47,13 +47,10 @@ class BarmaidPopoverViewController: NSViewController, NSTableViewDelegate, NSTab
         var service: Service = self.homebrew.services.objectAtIndex(row) as Service
         var status: String = service.status() as String
         if sender.image == self.startImage && (status == "stopped" || status == "unloaded") {
-            println("hello")
             service.start()
-            sender.image = self.startImage
         }
         else if sender.image == self.stopImage && status == "running" {
             service.stop()
-            sender.image = self.stopImage
         }
         self.tableView.reloadData()
     }
@@ -63,11 +60,16 @@ class BarmaidPopoverViewController: NSViewController, NSTableViewDelegate, NSTab
         var cellView: NSTableCellView = tableView.makeViewWithIdentifier("ServiceCell", owner: self) as NSTableCellView
         
         var buttonRect: NSRect = NSRect(x: 143, y: 1, width: 21,height: 21)
-        var button:NSButton = NSButton(frame: buttonRect)
-        button.bordered = false
-        button.target = self
-        button.action = "startStopButtonPress:"
-        cellView.addSubview(button)
+        var button:NSButton! = cellView.viewWithTag(0011) as NSButton!
+        
+        if (button == nil) {
+            button = NSButton(frame: buttonRect)
+            button.tag = 0011
+            button.bordered = false
+            button.target = self
+            button.action = "startStopButtonPress:"
+            cellView.addSubview(button)
+        }
         
         cellView.textField.stringValue = service.name
         
