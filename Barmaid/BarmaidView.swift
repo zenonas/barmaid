@@ -35,6 +35,10 @@ class BarmaidView: NSView {
 
         super.init(frame: rect)
     }
+
+    required init(coder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
+    }
     
     override func drawRect(rect: NSRect) {
         self.statusItem.drawStatusBarBackgroundInRect(rect, withHighlight: self.isSelected)

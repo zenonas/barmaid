@@ -10,7 +10,7 @@ import Cocoa
 
 class BarmaidPopoverViewController: NSViewController, NSTableViewDelegate, NSTableViewDataSource {
 
-    @IBOutlet var tableView: NSTableView
+    @IBOutlet var tableView: NSTableView!
     
     let startImage: NSImage = NSImage(named: NSImageNameRightFacingTriangleTemplate)
     let stopImage: NSImage = NSImage(named: NSImageNameStopProgressTemplate)
@@ -22,6 +22,10 @@ class BarmaidPopoverViewController: NSViewController, NSTableViewDelegate, NSTab
     }
     
     override func viewDidAppear() {
+        self.tableView.reloadData()
+    }
+    
+    override func viewWillAppear() {
         self.tableView.reloadData()
     }
     

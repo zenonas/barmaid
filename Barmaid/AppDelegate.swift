@@ -10,11 +10,11 @@ import Cocoa
 
 class AppDelegate: NSObject, NSApplicationDelegate {
     
-    @IBOutlet var barmaidPopover: NSPopover
+    @IBOutlet var barmaidPopover: NSPopover!
 
     let barmaid: BarmaidView
     
-    init() {
+    override init() {
         let statusBar = NSStatusBar.systemStatusBar()
         
         //Change -1 to CGFloat(NSVariableStatusItemLength) this is a Xcode 6 Beta 3 bug
