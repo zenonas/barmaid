@@ -11,37 +11,37 @@ import Cocoa
 class BarmaidPopoverViewController: NSViewController, NSTableViewDelegate, NSTableViewDataSource {
 
     @IBOutlet var tableView: NSTableView!
-    
+    @IBOutlet weak var cogwheelMenu: NSMenu!
+
     let startImage: NSImage = NSImage(named: NSImageNameRightFacingTriangleTemplate)
     let stopImage: NSImage = NSImage(named: NSImageNameStopProgressTemplate)
     
     var homebrew: Homebrew = Homebrew()
-
-    override func awakeFromNib() {
-        
-    }
-    
-    override func viewDidAppear() {
-        self.tableView.reloadData()
-    }
-    
-    override func viewWillAppear() {
-        self.tableView.reloadData()
-    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do view setup here.
+    }
+
+    // Cogwheelfunctions
+
+    @IBAction func cogwheelMenuPress(sender: AnyObject) {
+        NSMenu.popUpContextMenu(cogwheelMenu, withEvent: NSApplication.sharedApplication().currentEvent, forView: sender as NSButton)
     }
     
-    func numberOfRowsInTableView(tableView: NSTableView!) -> Int {
-        return self.homebrew.services.count
+    @IBAction func reloadMenuItemPress(sender: AnyObject) {
+        self.homebrew.findServices()
+        self.tableView.reloadData()
     }
     
-    @IBAction func barmaidAboutButon(sender: NSTextField) {
+    @IBAction func barmaidAboutButton(sender: AnyObject) {
         NSApp.orderFrontStandardAboutPanel(sender)
     }
     
+    @IBAction func quitMenuItemPress(sender: AnyObject) {
+        NSApplication.sharedApplication().terminate(self)
+    }
+
+    // Table View related functions
     func startStopButtonPress(sender: NSButton) {
         var row = self.tableView.rowForView(sender)
         var service: Service = self.homebrew.services.objectAtIndex(row) as Service
@@ -50,16 +50,20 @@ class BarmaidPopoverViewController: NSViewController, NSTableViewDelegate, NSTab
             service.start()
         }
         else if sender.image == self.stopImage && status == "running" {
-            service.stop()
+            service.unload()
         }
         self.tableView.reloadData()
+    }
+    
+    func numberOfRowsInTableView(tableView: NSTableView!) -> Int {
+        return self.homebrew.services.count
     }
     
     func tableView(tableView: NSTableView!, viewForTableColumn tableColumn: NSTableColumn!, row: Int) -> NSView! {
         var service: Service = self.homebrew.services[row] as Service
         var cellView: NSTableCellView = tableView.makeViewWithIdentifier("ServiceCell", owner: self) as NSTableCellView
         
-        var buttonRect: NSRect = NSRect(x: 143, y: 1, width: 21,height: 21)
+        var buttonRect: NSRect = NSRect(x: 145, y: 1, width: 21,height: 21)
         var button:NSButton! = cellView.viewWithTag(0011) as NSButton!
         
         if (button == nil) {

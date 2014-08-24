@@ -17,7 +17,7 @@ class AppDelegate: NSObject, NSApplicationDelegate {
     override init() {
         let statusBar = NSStatusBar.systemStatusBar()
         
-        //Change -1 to CGFloat(NSVariableStatusItemLength) this is a Xcode 6 Beta 3 bug
+        //Change -1 to CGFloat(NSVariableStatusItemLength) this is a Xcode 6 Beta 6 bug
         let barmaidItem = statusBar.statusItemWithLength(-1)
         
         self.barmaid = BarmaidView(logo: "beer_mug_16", statusItem: barmaidItem)
@@ -25,7 +25,7 @@ class AppDelegate: NSObject, NSApplicationDelegate {
         super.init()
     }
     
-    func applicationDidFinishLaunching(aNotification: NSNotification?) {
+    func applicationDidFinishLaunching(aNotification: NSNotification?) { 
         // Insert code here to initialize your application
     }
 
@@ -38,13 +38,13 @@ class AppDelegate: NSObject, NSApplicationDelegate {
         let edge = 1
         let barmaid = self.barmaid
         let rect = barmaid.frame
-        
         barmaid.onMouseDown = {
             if (barmaid.isSelected) {
                 self.barmaidPopover.showRelativeToRect(rect, ofView: barmaid, preferredEdge: edge)
                 return
             }
             self.barmaidPopover.close()
+            barmaid.isSelected = false
         }
     }
 

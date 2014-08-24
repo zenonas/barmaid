@@ -54,6 +54,4 @@ class BarmaidView: NSView {
         self.onMouseDown()
     }
     
-    override func mouseUp(theEvent: NSEvent!) {
-    }
 }

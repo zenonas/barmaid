@@ -15,11 +15,12 @@
         <customObject id="YLy-65-1bz" customClass="NSFontManager"/>
         <viewController id="Nlh-AI-p9s" userLabel="Popover View Controller" customClass="BarmaidPopoverViewController" customModule="Barmaid" customModuleProvider="target">
             <connections>
+                <outlet property="cogwheelMenu" destination="N9l-Rh-G8f" id="pEI-jI-DuY"/>
                 <outlet property="tableView" destination="kWI-3i-Rqq" id="CEw-sl-Cq4"/>
                 <outlet property="view" destination="HKa-oJ-0Xl" id="X5r-Wv-OyI"/>
             </connections>
         </viewController>
-        <popover id="Uft-Kc-JBF">
+        <popover behavior="t" id="Uft-Kc-JBF">
             <connections>
                 <outlet property="contentViewController" destination="Nlh-AI-p9s" id="tUu-In-Ia9"/>
             </connections>
@@ -103,9 +104,6 @@
                         <color key="textColor" name="controlTextColor" catalog="System" colorSpace="catalog"/>
                         <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
                     </textFieldCell>
-                    <connections>
-                        <action selector="barmaidAboutButon:" target="Nlh-AI-p9s" id="afz-1s-IhG"/>
-                    </connections>
                 </textField>
                 <button fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="cg6-RD-LRh">
                     <rect key="frame" x="151" y="0.0" width="21" height="20"/>
@@ -113,23 +111,36 @@
                         <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
                         <font key="font" metaFont="system"/>
                     </buttonCell>
+                    <connections>
+                        <action selector="cogwheelMenuPress:" target="Nlh-AI-p9s" id="m1d-gn-1BL"/>
+                    </connections>
                 </button>
             </subviews>
             <point key="canvasLocation" x="23" y="276.5"/>
         </customView>
         <menu id="N9l-Rh-G8f">
             <items>
-                <menuItem title="Item 1" id="8G3-5v-Mki">
+                <menuItem title="Reload" id="Yc6-qi-CTG">
                     <modifierMask key="keyEquivalentModifierMask"/>
+                    <connections>
+                        <action selector="reloadMenuItemPress:" target="Nlh-AI-p9s" id="EPG-wx-LfQ"/>
+                    </connections>
                 </menuItem>
-                <menuItem title="Item 2" id="Yc6-qi-CTG">
+                <menuItem isSeparatorItem="YES" id="di0-py-Vhz"/>
+                <menuItem title="About Barmaid" id="8G3-5v-Mki">
                     <modifierMask key="keyEquivalentModifierMask"/>
+                    <connections>
+                        <action selector="barmaidAboutButton:" target="Nlh-AI-p9s" id="RbK-7e-lV1"/>
+                    </connections>
                 </menuItem>
-                <menuItem title="Item 3" id="WJr-yD-tQd">
+                <menuItem title="Quit" id="WJr-yD-tQd">
                     <modifierMask key="keyEquivalentModifierMask"/>
+                    <connections>
+                        <action selector="quitMenuItemPress:" target="Nlh-AI-p9s" id="J0i-xK-nKZ"/>
+                    </connections>
                 </menuItem>
             </items>
-            <point key="canvasLocation" x="363" y="744.5"/>
+            <point key="canvasLocation" x="23" y="424.5"/>
         </menu>
     </objects>
     <resources>
