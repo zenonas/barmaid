@@ -44,7 +44,7 @@ class BarmaidView: NSView {
         self.statusItem.drawStatusBarBackgroundInRect(rect, withHighlight: self.isSelected)
         
         let size = self.logo.size
-        let rect = CGRectMake(2,2, size.width, size.height)
+        let rect = CGRectMake(3,3, size.width, size.height)
         
         self.logo.drawInRect(rect)
     }

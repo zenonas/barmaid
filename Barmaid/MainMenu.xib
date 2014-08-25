@@ -106,7 +106,7 @@
                     </textFieldCell>
                 </textField>
                 <button fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="cg6-RD-LRh">
-                    <rect key="frame" x="151" y="0.0" width="21" height="20"/>
+                    <rect key="frame" x="147" y="0.0" width="21" height="20"/>
                     <buttonCell key="cell" type="bevel" bezelStyle="rounded" image="NSActionTemplate" imagePosition="overlaps" alignment="center" state="on" imageScaling="proportionallyDown" inset="2" id="pnG-zy-50a">
                         <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
                         <font key="font" metaFont="system"/>
