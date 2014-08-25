@@ -52,6 +52,7 @@
 		AD3E3EDF19741C0E00418124 /* beer_mug_16.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = beer_mug_16.png; path = assets/beer_mug_16.png; sourceTree = SOURCE_ROOT; };
 		AD3E3EE119741E7200418124 /* Homebrew.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Homebrew.swift; sourceTree = "<group>"; };
 		AD3E3EE71974315900418124 /* LaunchControl.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LaunchControl.swift; sourceTree = "<group>"; };
+		AD654AD619AB763B00E28307 /* BarmaidHelper.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = BarmaidHelper.xcodeproj; path = Barmaid/BarmaidHelper/BarmaidHelper.xcodeproj; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -75,6 +76,7 @@
 		AD3E3E781973D53500418124 = {
 			isa = PBXGroup;
 			children = (
+				AD654AD619AB763B00E28307 /* BarmaidHelper.xcodeproj */,
 				AD3E3EA91973E11E00418124 /* Frameworks */,
 				AD3E3E831973D53600418124 /* Barmaid */,
 				AD3E3E961973D53600418124 /* BarmaidTests */,
