@@ -16,18 +16,31 @@ class BarmaidPopoverViewController: NSViewController, NSTableViewDelegate, NSTab
     
     let startImage: NSImage = NSImage(named: NSImageNameRightFacingTriangleTemplate)
     let stopImage: NSImage = NSImage(named: NSImageNameStopProgressTemplate)
+    let loginHelper: StartAtLoginHelper = StartAtLoginHelper()
     
     var homebrew: Homebrew = Homebrew()
+
+    override func awakeFromNib() {
+        if (loginHelper.startAtLogin) {
+            self.startAtLoginToggle.state = NSOnState
+        } else {
+            self.startAtLoginToggle.state = NSOffState
+        }
+    }
     
     override func viewDidLoad() {
-        
         super.viewDidLoad()
     }
 
     // Cogwheelfunctions
     
     @IBAction func startAtLoginPress(sender: AnyObject) {
-        
+        loginHelper.toggleStartAtLogin()
+        if (loginHelper.startAtLogin) {
+            self.startAtLoginToggle.state = NSOnState
+        } else {
+            self.startAtLoginToggle.state = NSOffState
+        }
     }
 
     @IBAction func cogwheelMenuPress(sender: AnyObject) {
@@ -59,10 +72,6 @@ class BarmaidPopoverViewController: NSViewController, NSTableViewDelegate, NSTab
             service.unload()
         }
         self.tableView.reloadData()
-    }
-    
-    func popoverWillShow() {
-        println("will show")
     }
     
     func numberOfRowsInTableView(tableView: NSTableView!) -> Int {

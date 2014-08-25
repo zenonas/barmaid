@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		AD25112119AB7BDD00AE9B65 /* BarmaidHelper.app in Copy Helper App */ = {isa = PBXBuildFile; fileRef = AD25111E19AB7BCD00AE9B65 /* BarmaidHelper.app */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
 		AD25112319AB7C2600AE9B65 /* ServiceManagement.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AD25112219AB7C2600AE9B65 /* ServiceManagement.framework */; };
+		AD25112919ABBAD100AE9B65 /* StartAtLoginHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD25112819ABBAD100AE9B65 /* StartAtLoginHelper.swift */; };
 		AD2C77AD19756AA2000D1753 /* Service.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD2C77AC19756AA2000D1753 /* Service.swift */; };
 		AD2C77AF19757EAC000D1753 /* BarmaidPopoverViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD2C77AE19757EAC000D1753 /* BarmaidPopoverViewController.swift */; };
 		AD3E3E871973D53600418124 /* main.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD3E3E861973D53600418124 /* main.swift */; };
@@ -64,6 +65,7 @@
 
 /* Begin PBXFileReference section */
 		AD25112219AB7C2600AE9B65 /* ServiceManagement.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = ServiceManagement.framework; path = System/Library/Frameworks/ServiceManagement.framework; sourceTree = SDKROOT; };
+		AD25112819ABBAD100AE9B65 /* StartAtLoginHelper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StartAtLoginHelper.swift; sourceTree = "<group>"; };
 		AD2C77AC19756AA2000D1753 /* Service.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Service.swift; sourceTree = "<group>"; };
 		AD2C77AE19757EAC000D1753 /* BarmaidPopoverViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BarmaidPopoverViewController.swift; sourceTree = "<group>"; };
 		AD3E3E811973D53600418124 /* Barmaid.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Barmaid.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -141,6 +143,7 @@
 				AD3E3EA31973DFF400418124 /* BarmaidView.swift */,
 				AD3E3EDD1974163100418124 /* MainMenu.xib */,
 				AD2C77AE19757EAC000D1753 /* BarmaidPopoverViewController.swift */,
+				AD25112819ABBAD100AE9B65 /* StartAtLoginHelper.swift */,
 				AD3E3EE119741E7200418124 /* Homebrew.swift */,
 				AD3E3EE71974315900418124 /* LaunchControl.swift */,
 				AD2C77AC19756AA2000D1753 /* Service.swift */,
@@ -327,6 +330,7 @@
 				AD3E3EA51973DFF400418124 /* BarmaidView.swift in Sources */,
 				AD2C77AD19756AA2000D1753 /* Service.swift in Sources */,
 				AD2C77AF19757EAC000D1753 /* BarmaidPopoverViewController.swift in Sources */,
+				AD25112919ABBAD100AE9B65 /* StartAtLoginHelper.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

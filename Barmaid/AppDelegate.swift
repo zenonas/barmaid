@@ -27,8 +27,6 @@ class AppDelegate: NSObject, NSApplicationDelegate {
     }
     
     func applicationDidFinishLaunching(aNotification: NSNotification?) { 
-        var barmaidVC = self.barmaidPopover.contentViewController as BarmaidPopoverViewController
-        barmaidVC.popoverWillShow()
         // Insert code here to initialize your application
     }
 
