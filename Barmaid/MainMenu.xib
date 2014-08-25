@@ -16,6 +16,7 @@
         <viewController id="Nlh-AI-p9s" userLabel="Popover View Controller" customClass="BarmaidPopoverViewController" customModule="Barmaid" customModuleProvider="target">
             <connections>
                 <outlet property="cogwheelMenu" destination="N9l-Rh-G8f" id="pEI-jI-DuY"/>
+                <outlet property="startAtLoginToggle" destination="dED-a4-DGy" id="bgX-F8-Vnt"/>
                 <outlet property="tableView" destination="kWI-3i-Rqq" id="CEw-sl-Cq4"/>
                 <outlet property="view" destination="HKa-oJ-0Xl" id="X5r-Wv-OyI"/>
             </connections>
@@ -127,6 +128,12 @@
                     </connections>
                 </menuItem>
                 <menuItem isSeparatorItem="YES" id="di0-py-Vhz"/>
+                <menuItem title="Start at Login" id="dED-a4-DGy">
+                    <modifierMask key="keyEquivalentModifierMask"/>
+                    <connections>
+                        <action selector="startAtLoginPress:" target="Nlh-AI-p9s" id="hgt-Nj-KZo"/>
+                    </connections>
+                </menuItem>
                 <menuItem title="About Barmaid" id="8G3-5v-Mki">
                     <modifierMask key="keyEquivalentModifierMask"/>
                     <connections>

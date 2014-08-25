@@ -7,10 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		AD25112719ABAB0200AE9B65 /* Main.xib in Resources */ = {isa = PBXBuildFile; fileRef = AD25112619ABAB0200AE9B65 /* Main.xib */; };
 		AD654ABA19AB763A00E28307 /* main.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD654AB919AB763A00E28307 /* main.swift */; };
 		AD654ABC19AB763A00E28307 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD654ABB19AB763A00E28307 /* AppDelegate.swift */; };
-		AD654ABE19AB763A00E28307 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = AD654ABD19AB763A00E28307 /* Images.xcassets */; };
-		AD654AC119AB763A00E28307 /* MainMenu.xib in Resources */ = {isa = PBXBuildFile; fileRef = AD654ABF19AB763A00E28307 /* MainMenu.xib */; };
 		AD654ACD19AB763B00E28307 /* BarmaidHelperTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD654ACC19AB763B00E28307 /* BarmaidHelperTests.swift */; };
 /* End PBXBuildFile section */
 
@@ -25,12 +24,11 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		AD25112619ABAB0200AE9B65 /* Main.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = Main.xib; sourceTree = "<group>"; };
 		AD654AB419AB763A00E28307 /* BarmaidHelper.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BarmaidHelper.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		AD654AB819AB763A00E28307 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		AD654AB919AB763A00E28307 /* main.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = main.swift; sourceTree = "<group>"; };
 		AD654ABB19AB763A00E28307 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		AD654ABD19AB763A00E28307 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
-		AD654AC019AB763A00E28307 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/MainMenu.xib; sourceTree = "<group>"; };
 		AD654AC619AB763B00E28307 /* BarmaidHelperTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = BarmaidHelperTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		AD654ACB19AB763B00E28307 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		AD654ACC19AB763B00E28307 /* BarmaidHelperTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BarmaidHelperTests.swift; sourceTree = "<group>"; };
@@ -75,9 +73,8 @@
 		AD654AB619AB763A00E28307 /* BarmaidHelper */ = {
 			isa = PBXGroup;
 			children = (
+				AD25112619ABAB0200AE9B65 /* Main.xib */,
 				AD654ABB19AB763A00E28307 /* AppDelegate.swift */,
-				AD654ABD19AB763A00E28307 /* Images.xcassets */,
-				AD654ABF19AB763A00E28307 /* MainMenu.xib */,
 				AD654AB719AB763A00E28307 /* Supporting Files */,
 			);
 			path = BarmaidHelper;
@@ -189,8 +186,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				AD654ABE19AB763A00E28307 /* Images.xcassets in Resources */,
-				AD654AC119AB763A00E28307 /* MainMenu.xib in Resources */,
+				AD25112719ABAB0200AE9B65 /* Main.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -230,17 +226,6 @@
 			targetProxy = AD654AC719AB763B00E28307 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
-
-/* Begin PBXVariantGroup section */
-		AD654ABF19AB763A00E28307 /* MainMenu.xib */ = {
-			isa = PBXVariantGroup;
-			children = (
-				AD654AC019AB763A00E28307 /* Base */,
-			);
-			name = MainMenu.xib;
-			sourceTree = "<group>";
-		};
-/* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
 		AD654ACE19AB763B00E28307 /* Debug */ = {
@@ -328,6 +313,7 @@
 				INFOPLIST_FILE = BarmaidHelper/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
 			};
 			name = Debug;
 		};
@@ -339,6 +325,7 @@
 				INFOPLIST_FILE = BarmaidHelper/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
 			};
 			name = Release;
 		};
@@ -397,6 +384,7 @@
 				AD654AD219AB763B00E28307 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		AD654AD319AB763B00E28307 /* Build configuration list for PBXNativeTarget "BarmaidHelperTests" */ = {
 			isa = XCConfigurationList;
@@ -405,6 +393,7 @@
 				AD654AD519AB763B00E28307 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

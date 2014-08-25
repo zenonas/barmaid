@@ -12,17 +12,23 @@ class BarmaidPopoverViewController: NSViewController, NSTableViewDelegate, NSTab
 
     @IBOutlet var tableView: NSTableView!
     @IBOutlet weak var cogwheelMenu: NSMenu!
-
+    @IBOutlet weak var startAtLoginToggle: NSMenuItem!
+    
     let startImage: NSImage = NSImage(named: NSImageNameRightFacingTriangleTemplate)
     let stopImage: NSImage = NSImage(named: NSImageNameStopProgressTemplate)
     
     var homebrew: Homebrew = Homebrew()
     
     override func viewDidLoad() {
+        
         super.viewDidLoad()
     }
 
     // Cogwheelfunctions
+    
+    @IBAction func startAtLoginPress(sender: AnyObject) {
+        
+    }
 
     @IBAction func cogwheelMenuPress(sender: AnyObject) {
         NSMenu.popUpContextMenu(cogwheelMenu, withEvent: NSApplication.sharedApplication().currentEvent, forView: sender as NSButton)
