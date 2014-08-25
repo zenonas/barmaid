@@ -10,25 +10,24 @@ import Cocoa
 
 class Homebrew {
     
-    var task: NSTask
-    var pipe: NSPipe
-    var file: NSFileHandle
-    var services: NSMutableArray
+    var task: NSTask!
+    var pipe: NSPipe!
+    var file: NSFileHandle!
+    var services: NSMutableArray!
     
     init() {
-        self.task = NSTask()
-        self.task.launchPath = "/bin/bash"
-        self.pipe = NSPipe()
-        self.file = NSFileHandle()
-        self.services = NSMutableArray()
-        self.task.arguments = ["-c", "/usr/bin/find -L /usr/local/opt -type f -name 'homebrew*.plist'"]
-        
         self.findServices()
     }
     
     func findServices() {
+        self.services = NSMutableArray()
+        self.task = NSTask()
+        self.task.launchPath = "/bin/bash"
+        self.pipe = NSPipe()
+        self.file = NSFileHandle()
         self.task.standardOutput = self.pipe
         self.file = self.pipe.fileHandleForReading
+        self.task.arguments = ["-c", "/usr/bin/find -L /usr/local/opt -type f -name 'homebrew*.plist'"]
         self.task.launch()
         self.task.waitUntilExit()
         
