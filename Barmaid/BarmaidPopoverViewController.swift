@@ -55,6 +55,10 @@ class BarmaidPopoverViewController: NSViewController, NSTableViewDelegate, NSTab
         self.tableView.reloadData()
     }
     
+    func popoverWillShow() {
+        println("will show")
+    }
+    
     func numberOfRowsInTableView(tableView: NSTableView!) -> Int {
         return self.homebrew.services.count
     }

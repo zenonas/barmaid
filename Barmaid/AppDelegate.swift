@@ -11,7 +11,8 @@ import Cocoa
 class AppDelegate: NSObject, NSApplicationDelegate {
     
     @IBOutlet var barmaidPopover: NSPopover!
-
+    var popoverTransiencyMonitor: AnyObject?
+    
     let barmaid: BarmaidView
     
     override init() {
@@ -26,6 +27,8 @@ class AppDelegate: NSObject, NSApplicationDelegate {
     }
     
     func applicationDidFinishLaunching(aNotification: NSNotification?) { 
+        var barmaidVC = self.barmaidPopover.contentViewController as BarmaidPopoverViewController
+        barmaidVC.popoverWillShow()
         // Insert code here to initialize your application
     }
 
@@ -34,17 +37,22 @@ class AppDelegate: NSObject, NSApplicationDelegate {
         // Insert code here to tear down your application
     }
     
+    func closeBarmaid() {
+        self.barmaidPopover.close()
+        self.popoverTransiencyMonitor = nil
+        self.barmaid.isSelected = false
+    }
+    
     override func awakeFromNib() {
         let edge = 1
         let barmaid = self.barmaid
         let rect = barmaid.frame
         barmaid.onMouseDown = {
-            if (barmaid.isSelected) {
-                self.barmaidPopover.showRelativeToRect(rect, ofView: barmaid, preferredEdge: edge)
-                return
-            }
-            self.barmaidPopover.close()
-            barmaid.isSelected = false
+            self.popoverTransiencyMonitor = NSEvent.addGlobalMonitorForEventsMatchingMask(NSEventMask.LeftMouseDownMask, handler: {(event: NSEvent!) in
+                        self.closeBarmaid()
+                }) as AnyObject
+            self.barmaidPopover.showRelativeToRect(rect, ofView: barmaid, preferredEdge: edge)
+            self.barmaid.isSelected = true
         }
     }
 
