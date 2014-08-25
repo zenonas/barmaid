@@ -12,12 +12,14 @@ import ServiceManagement
 class StartAtLoginHelper {
 
     let barmaidHelper: NSString = "com.zenonas.BarmaidHelper"
+    let helperUrl: NSURL = NSBundle.mainBundle().bundleURL.URLByAppendingPathComponent("Contents/Library/LoginItems/BarmaidHelper.app")
     let userDefaults: NSUserDefaults
     var startAtLogin: Bool
     
     init() {
         userDefaults = NSUserDefaults.standardUserDefaults()
         startAtLogin = userDefaults.boolForKey("startAtLogin")
+        var status: OSStatus = LSRegisterURL(helperUrl, 1)
     }
     
     func error() {
