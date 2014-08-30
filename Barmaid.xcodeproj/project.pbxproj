@@ -7,7 +7,6 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		AD25112119AB7BDD00AE9B65 /* BarmaidHelper.app in Copy Helper App */ = {isa = PBXBuildFile; fileRef = AD25111E19AB7BCD00AE9B65 /* BarmaidHelper.app */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
 		AD25112319AB7C2600AE9B65 /* ServiceManagement.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AD25112219AB7C2600AE9B65 /* ServiceManagement.framework */; };
 		AD25112919ABBAD100AE9B65 /* StartAtLoginHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD25112819ABBAD100AE9B65 /* StartAtLoginHelper.swift */; };
 		AD2C77AD19756AA2000D1753 /* Service.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD2C77AC19756AA2000D1753 /* Service.swift */; };
@@ -26,20 +25,6 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
-		AD25111D19AB7BCD00AE9B65 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = AD654AD619AB763B00E28307 /* BarmaidHelper.xcodeproj */;
-			proxyType = 2;
-			remoteGlobalIDString = AD654AB419AB763A00E28307;
-			remoteInfo = BarmaidHelper;
-		};
-		AD25111F19AB7BCD00AE9B65 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = AD654AD619AB763B00E28307 /* BarmaidHelper.xcodeproj */;
-			proxyType = 2;
-			remoteGlobalIDString = AD654AC619AB763B00E28307;
-			remoteInfo = BarmaidHelperTests;
-		};
 		AD3E3E941973D53600418124 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = AD3E3E791973D53500418124 /* Project object */;
@@ -48,20 +33,6 @@
 			remoteInfo = Barmaid;
 		};
 /* End PBXContainerItemProxy section */
-
-/* Begin PBXCopyFilesBuildPhase section */
-		AD654ADF19AB794500E28307 /* Copy Helper App */ = {
-			isa = PBXCopyFilesBuildPhase;
-			buildActionMask = 2147483647;
-			dstPath = Contents/Library/LoginItems;
-			dstSubfolderSpec = 1;
-			files = (
-				AD25112119AB7BDD00AE9B65 /* BarmaidHelper.app in Copy Helper App */,
-			);
-			name = "Copy Helper App";
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-/* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
 		AD25112219AB7C2600AE9B65 /* ServiceManagement.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = ServiceManagement.framework; path = System/Library/Frameworks/ServiceManagement.framework; sourceTree = SDKROOT; };
@@ -85,7 +56,6 @@
 		AD3E3EDF19741C0E00418124 /* beer_mug_16.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = beer_mug_16.png; path = assets/beer_mug_16.png; sourceTree = SOURCE_ROOT; };
 		AD3E3EE119741E7200418124 /* Homebrew.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Homebrew.swift; sourceTree = "<group>"; };
 		AD3E3EE71974315900418124 /* LaunchControl.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LaunchControl.swift; sourceTree = "<group>"; };
-		AD654AD619AB763B00E28307 /* BarmaidHelper.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = BarmaidHelper.xcodeproj; path = Barmaid/BarmaidHelper/BarmaidHelper.xcodeproj; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -107,19 +77,9 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		AD25111919AB7BCD00AE9B65 /* Products */ = {
-			isa = PBXGroup;
-			children = (
-				AD25111E19AB7BCD00AE9B65 /* BarmaidHelper.app */,
-				AD25112019AB7BCD00AE9B65 /* BarmaidHelperTests.xctest */,
-			);
-			name = Products;
-			sourceTree = "<group>";
-		};
 		AD3E3E781973D53500418124 = {
 			isa = PBXGroup;
 			children = (
-				AD654AD619AB763B00E28307 /* BarmaidHelper.xcodeproj */,
 				AD3E3EA91973E11E00418124 /* Frameworks */,
 				AD3E3E831973D53600418124 /* Barmaid */,
 				AD3E3E961973D53600418124 /* BarmaidTests */,
@@ -202,7 +162,6 @@
 				AD3E3E7D1973D53500418124 /* Sources */,
 				AD3E3E7E1973D53500418124 /* Frameworks */,
 				AD3E3E7F1973D53500418124 /* Resources */,
-				AD654ADF19AB794500E28307 /* Copy Helper App */,
 			);
 			buildRules = (
 			);
@@ -265,12 +224,6 @@
 			mainGroup = AD3E3E781973D53500418124;
 			productRefGroup = AD3E3E821973D53600418124 /* Products */;
 			projectDirPath = "";
-			projectReferences = (
-				{
-					ProductGroup = AD25111919AB7BCD00AE9B65 /* Products */;
-					ProjectRef = AD654AD619AB763B00E28307 /* BarmaidHelper.xcodeproj */;
-				},
-			);
 			projectRoot = "";
 			targets = (
 				AD3E3E801973D53500418124 /* Barmaid */,
@@ -278,23 +231,6 @@
 			);
 		};
 /* End PBXProject section */
-
-/* Begin PBXReferenceProxy section */
-		AD25111E19AB7BCD00AE9B65 /* BarmaidHelper.app */ = {
-			isa = PBXReferenceProxy;
-			fileType = wrapper.application;
-			path = BarmaidHelper.app;
-			remoteRef = AD25111D19AB7BCD00AE9B65 /* PBXContainerItemProxy */;
-			sourceTree = BUILT_PRODUCTS_DIR;
-		};
-		AD25112019AB7BCD00AE9B65 /* BarmaidHelperTests.xctest */ = {
-			isa = PBXReferenceProxy;
-			fileType = wrapper.cfbundle;
-			path = BarmaidHelperTests.xctest;
-			remoteRef = AD25111F19AB7BCD00AE9B65 /* PBXContainerItemProxy */;
-			sourceTree = BUILT_PRODUCTS_DIR;
-		};
-/* End PBXReferenceProxy section */
 
 /* Begin PBXResourcesBuildPhase section */
 		AD3E3E7F1973D53500418124 /* Resources */ = {

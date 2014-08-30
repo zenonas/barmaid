@@ -11,42 +11,51 @@ import ServiceManagement
 
 class StartAtLoginHelper {
 
-    let barmaidHelper: NSString = "com.zenonas.BarmaidHelper"
-    let helperUrl: NSURL = NSBundle.mainBundle().bundleURL.URLByAppendingPathComponent("Contents/Library/LoginItems/BarmaidHelper.app")
     let userDefaults: NSUserDefaults
     var startAtLogin: Bool
+    var errorInfo: AutoreleasingUnsafeMutablePointer<NSDictionary?>
     
     init() {
         userDefaults = NSUserDefaults.standardUserDefaults()
         startAtLogin = userDefaults.boolForKey("startAtLogin")
-        var status: OSStatus = LSRegisterURL(helperUrl, 1)
-    }
-    
-    func error() {
-        // Switch to an NSAlert box
-        println("Could not switch the start at login")
+        errorInfo = AutoreleasingUnsafeMutablePointer<NSDictionary?>()
     }
     
     func toggleStartAtLogin() {
         if (startAtLogin) {
-            var status: Boolean = SMLoginItemSetEnabled(barmaidHelper, 0)
-            println(status)
-            if (SMLoginItemSetEnabled(barmaidHelper, 0) == 1) {
-                userDefaults.setBool(false, forKey: "startAtLogin")
-                startAtLogin = false
-            } else {
-                error()
-            }
+            disableStartAtLogin()
+            startAtLogin = false
         } else {
-            if (SMLoginItemSetEnabled(barmaidHelper, 1) == 1) {
-                userDefaults.setBool(true, forKey: "startAtLogin")
-                startAtLogin = true
-            } else {
-                error()
-            }
+            enableStartAtLogin()
+            startAtLogin = true
         }
+        updateDefaults()
     }
     
+    func updateDefaults() {
+        userDefaults.setBool(startAtLogin, forKey: "startAtLogin")
+        userDefaults.synchronize()
+    }
+
+    func enableStartAtLogin() {
+        var tell: String = "tell application \"System Events\"\n"
+        var getProperties: String = "get the properties of every login item\n"
+        var newItem: String = "make new login item at the end of login items with properties {path: \"/Applications/Barmaid.app\", hidden: false}\n"
+        var endTell: String = "end tell"
+        var startAtLoginScript: NSAppleScript = NSAppleScript(source: tell + getProperties + newItem + endTell)
+
+        startAtLoginScript.executeAndReturnError(errorInfo)
+    }
+    
+    func disableStartAtLogin() {
+        var tell: String = "tell application \"System Events\"\n"
+        var deleteItem: String = "if login item \"Barmaid\" exists then delete login item \"Barmaid\"\n"
+        var endTell: String = "end tell"
+        var startAtLoginScript: NSAppleScript = NSAppleScript(source: tell + deleteItem + endTell)
+
+        startAtLoginScript.executeAndReturnError(errorInfo)
+        
+    }
     
     
 }
