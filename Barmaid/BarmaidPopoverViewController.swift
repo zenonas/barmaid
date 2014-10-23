@@ -14,8 +14,8 @@ class BarmaidPopoverViewController: NSViewController, NSTableViewDelegate, NSTab
     @IBOutlet weak var cogwheelMenu: NSMenu!
     @IBOutlet weak var startAtLoginToggle: NSMenuItem!
     
-    let startImage: NSImage = NSImage(named: NSImageNameRightFacingTriangleTemplate)
-    let stopImage: NSImage = NSImage(named: NSImageNameStopProgressTemplate)
+    let startImage: NSImage = NSImage(named: NSImageNameRightFacingTriangleTemplate)!
+    let stopImage: NSImage = NSImage(named: NSImageNameStopProgressTemplate)!
     let loginHelper: StartAtLoginHelper = StartAtLoginHelper()
     
     var homebrew: Homebrew = Homebrew()
@@ -44,7 +44,7 @@ class BarmaidPopoverViewController: NSViewController, NSTableViewDelegate, NSTab
     }
 
     @IBAction func cogwheelMenuPress(sender: AnyObject) {
-        NSMenu.popUpContextMenu(cogwheelMenu, withEvent: NSApplication.sharedApplication().currentEvent, forView: sender as NSButton)
+        NSMenu.popUpContextMenu(cogwheelMenu, withEvent: NSApplication.sharedApplication().currentEvent!, forView: sender as NSButton)
     }
     
     @IBAction func reloadMenuItemPress(sender: AnyObject) {
@@ -94,13 +94,13 @@ class BarmaidPopoverViewController: NSViewController, NSTableViewDelegate, NSTab
             cellView.addSubview(button)
         }
         
-        cellView.textField.stringValue = service.name
+        cellView.textField?.stringValue = service.name
         
         if service.status() == "running" {
-            cellView.imageView.image = NSImage(named:NSImageNameStatusAvailable)
+            cellView.imageView?.image = NSImage(named:NSImageNameStatusAvailable)
             button.image = self.stopImage
         } else {
-            cellView.imageView.image = NSImage(named: NSImageNameStatusUnavailable)
+            cellView.imageView?.image = NSImage(named: NSImageNameStatusUnavailable)
             button.image = self.startImage
         }
         return cellView

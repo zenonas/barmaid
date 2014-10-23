@@ -48,7 +48,7 @@ class AppDelegate: NSObject, NSApplicationDelegate {
         barmaid.onMouseDown = {
             self.popoverTransiencyMonitor = NSEvent.addGlobalMonitorForEventsMatchingMask(NSEventMask.LeftMouseDownMask, handler: {(event: NSEvent!) in
                         self.closeBarmaid()
-                }) as AnyObject
+                })!
             self.barmaidPopover.showRelativeToRect(rect, ofView: barmaid, preferredEdge: edge)
             self.barmaid.isSelected = true
         }

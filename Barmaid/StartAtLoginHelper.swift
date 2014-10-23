@@ -42,7 +42,7 @@ class StartAtLoginHelper {
         var getProperties: String = "get the properties of every login item\n"
         var newItem: String = "make new login item at the end of login items with properties {path: \"/Applications/Barmaid.app\", hidden: false}\n"
         var endTell: String = "end tell"
-        var startAtLoginScript: NSAppleScript = NSAppleScript(source: tell + getProperties + newItem + endTell)
+        var startAtLoginScript: NSAppleScript = NSAppleScript(source: tell + getProperties + newItem + endTell)!
 
         startAtLoginScript.executeAndReturnError(errorInfo)
     }
@@ -51,7 +51,7 @@ class StartAtLoginHelper {
         var tell: String = "tell application \"System Events\"\n"
         var deleteItem: String = "if login item \"Barmaid\" exists then delete login item \"Barmaid\"\n"
         var endTell: String = "end tell"
-        var startAtLoginScript: NSAppleScript = NSAppleScript(source: tell + deleteItem + endTell)
+        var startAtLoginScript: NSAppleScript = NSAppleScript(source: tell + deleteItem + endTell)!
 
         startAtLoginScript.executeAndReturnError(errorInfo)
         

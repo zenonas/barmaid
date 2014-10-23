@@ -9,7 +9,7 @@
 import Cocoa
 
 class LaunchControl {
-    
+ 
     let path: String
     let serviceId: String
     let launchPath: String

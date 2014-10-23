@@ -25,7 +25,7 @@ class BarmaidView: NSView {
     }
     
     init(logo: String, statusItem: NSStatusItem) {
-        self.logo = NSImage(named: logo)
+        self.logo = NSImage(named: logo)!
         self.statusItem = statusItem
         self.isSelected = false
         self.onMouseDown = {}
@@ -49,7 +49,7 @@ class BarmaidView: NSView {
         self.logo.drawInRect(rect)
     }
     
-    override func mouseDown(theEvent: NSEvent!) {
+    override func mouseDown(theEvent: NSEvent) {
         self.isSelected = !self.isSelected
         self.onMouseDown()
     }
